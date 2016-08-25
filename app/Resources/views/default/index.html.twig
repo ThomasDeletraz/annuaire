@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+        <div class="row titre">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+
+                <h1> <span class="label label-info ">Mes Contacts</span></h1>
+
+            </div>
+
+        </div>
+
+        <div class="row rechercheContact">
+            <div class="col-xs-6  col-sm-6 col-md-3  col-lg-6 ">
+                <a href="{{ path('ajoutContact') }}"><span class="glyphicon glyphicon-plus"></span>Ajouter un contact</a>
+            </div>
+
+        </div>
+
+
+        <div class="row contact">
+
+            <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-3 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                {% for contact in contacts %}
+
+                <div class="media">
+
+                    <div class="media-left">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user skinEmpty"></span>
+                            <!--<img class="media-object" src="..." alt="...">-->
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <div class="panel {% if contact.personne.sexePersonne  %} panel-warning {% else %} panel-info {% endif %}   ">
+
+
+
+
+
+                                <div class="panel-heading "><h3 class="media-heading">{{ contact.personne.prenomPersonne }} {{ contact.personne.nomPersonne }} <a href="{{ path("suppressionContact",{"id":contact.personne.id } ) }}"><span class="pull-right cursor glyphicon glyphicon-remove"></span> </a></a></h3></div>
+
+                                <div class="panel-body">
+                                    <table>
+                                        {% for item in contact.coordonnees  %}
+                                        <tr>
+                                            <td><h3>  {{ item.libelle }}</h3></td>
+
+                                            <td>{{ item.contenu }}</td>
+                                        </tr>
+                                        {% endfor %}
+
+                                            <td><h3>Date de naissance</h3></td>
+                                            <td>{{ contact.personne.DateNaissancePersonne|dateFormatted }}</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
+
+                            <!--
+                            <div class="panel-heading"><h3 class="media-heading">Nom Prénom</h3></div>
+                            <div class="panel-body">
+                               <table>
+                                   <tr>
+                                       <td><h3>Téléphone fixe</h3></td>
+                                       <td>07 60 06 34 50</td>
+                                   </tr>
+                               </table>
+                            </div>
+                        </div>-->
+
+
+
+                    </div>
+
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

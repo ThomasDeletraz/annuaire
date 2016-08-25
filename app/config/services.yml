@@ -1,0 +1,16 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    ContactBasiqueRepository:
+        class: AppBundle\Repository\ContactBasique
+        arguments: ["@doctrine","@database_connection" ]
+
+    app.twig_extension:
+            class: AppBundle\Twig\Extension\Miscellaneous
+            arguments: []
+            public: false
+            tags:
+                - { name: twig.extension }

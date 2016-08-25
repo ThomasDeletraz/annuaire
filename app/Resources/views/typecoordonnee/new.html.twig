@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include(":typecoordonnee:titre.html.twig") %}
+
+ <div class="text-left row">
+    <div class="row ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <h2>Ajouter un type</h2>
+        </div>
+    </div>
+
+    {{ form_start(form) }}
+    <div class="row">
+
+
+        <div class="form-group formAjoutContact">
+            <h3> <span class="label label-info">Libellé</span>  {{ form_widget(form.libelleTypeCoordonnee) }}</h3>
+            <div class=""><input type="submit" value="Enregistrer" class="btn btn-success"/><input type="reset" value="effacer" class="btn btn-danger"/></div>
+
+
+        </div>
+    </div>
+
+
+
+    {{ form_end(form) }}
+
+
+    <div class="row ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nested">
+            <ul>
+                <li>
+                    <a href="{{ path('gestion_index') }}">Retour à la liste</a>
+                </li>
+                <li>
+                    <a href="{{ path('homepage') }}">Retour à l'annuaire</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+ </div>
+{% endblock %}

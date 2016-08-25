@@ -1,0 +1,57 @@
+.titre,.titreContact{
+
+    padding-top:0px;
+    padding-bottom:50px;
+}
+.titre h1{
+    margin-top:0px;
+}
+.titre .label{
+    display:inline-block;
+    width:100%;
+}
+.contact table{
+    width:100%;
+}
+.contact td{
+    width:50%;
+}
+
+.contact{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.ajoutContact .glyphicon-plus{
+    margin-right:8px;
+}
+
+.skinEmpty{
+    font-size:4em;
+}
+
+.annuaire ul{
+    list-style: none;
+    padding-left:0px;
+    margin-left:0px;
+}
+.nested{
+    padding-left:0px;
+}
+
+.formAjoutContact input {
+    margin-right:20px;
+    margin-bottom:20px;
+
+}
+.formAjoutContact input[type=text],.formAjoutContact input[type=email]{
+    margin-right:20px;
+    margin-bottom:20px;
+    width:300px;
+}
+
+.formAjoutContact .label{
+    display:inline-block;
+    width:200px;
+    font-size:20px;
+}
